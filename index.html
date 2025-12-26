@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday Divish 🎉</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Countdown Background Video -->
+    <video id="countdownVideo" autoplay muted loop playsinline>
+      <source src="./video/countdown.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Confetti Background Video -->
+    <video id="confettiVideo" muted loop playsinline class="hidden">
+      <source src="./video/confetti.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Overlay Content -->
+    <div class="overlay">
+      <!-- Countdown -->
+      <h1 id="countdown">🎂 Loading...</h1>
+
+      <!-- Birthday Content -->
+      <div id="birthdayContent" class="hidden buttonMessage">
+        <button onclick="showMessage()">Show Message 💌</button>
+
+        <p id="birthdayMessage" class="hidden message">
+          May your life be filled with happiness, success, and unforgettable
+          memories 💖✨ I LOVE YOU
+        </p>
+
+        <button id="cakeBtn" class="hidden" onclick="playCakeVideo()">
+          🎂 It’s time to cut the cake
+        </button>
+      </div>
+    </div>
+
+    <!-- Fullscreen Cake Video -->
+    <div id="cakeVideoOverlay" class="hidden">
+      <video id="cakeVideo" playsinline>
+        <source src="./video/cakeCandle.mov" type="video/mp4" />
+      </video>
+    </div>
+    <!-- Final Image + Overlay Video -->
+    <div id="finalScene" class="hidden">
+      <img src="./video/divish.JPG" alt="Divish" class="final-image" />
+
+      <video id="overlayVideo" muted loop playsinline>
+        <source src="./video/overlay.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <section id="reasonsSection" class="hidden">
+      <h2 class="section-title">25 Reasons</h2>
+
+      <div class="heart-card-grid">
+        <div class="heart-card" onclick="openModal('love')">
+          <div class="heart">❤️</div>
+          <p>25 Things I Love About You</p>
+        </div>
+
+        <div class="heart-card" onclick="openModal('dontLike')">
+          <div class="heart">❤️</div>
+          <p>25 Things I Don’t Like About You</p>
+        </div>
+
+        <div class="heart-card" onclick="openModal('adore')">
+          <div class="heart">❤️</div>
+          <p>25 Versions of You</p>
+        </div>
+        <div class="heart-card" onclick="openModal('special')">
+          <div class="heart">❤️</div>
+          <p>25 Reasons You’re Special</p>
+        </div>
+
+        <div class="heart-card" onclick="openModal('memories')">
+          <div class="heart">❤️</div>
+          <p>25 Facts about You</p>
+        </div>
+
+        <div class="heart-card" onclick="openModal('grateful')">
+          <div class="heart">❤️</div>
+          <p>25 Reasons I’m Grateful for You</p>
+        </div>
+      </div>
+      <section id="loveSection" class="loveSection">
+        <button class="love-btn" onclick="showLove()">I Love You 💖</button>
+      </section>
+    </section>
+    <!-- 💖 I LOVE YOU SECTION -->
+
+    <!-- 💖 LOVE VIDEO OVERLAY -->
+    <div id="loveOverlay" class="hidden">
+      <video id="loveVideo" autoplay muted loop playsinline>
+        <source src="./video/heartsBg.mov" type="video/mp4" />
+      </video>
+
+      <div class="love-message hidden">
+        <h1>Happy Anniversary Baby</h1>
+        <h4>I Love You Jaaannn</h4>
+        <h4>\(•_•)/</h4>
+        <h6>I hope you liked it</h6>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="reasonModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <h3 id="modalTitle"></h3>
+        <ol id="modalList"></ol>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Background Videos */
+  video {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+  
+  /* Countdown */
+  #countdown {
+    font-size: 10rem;
+    font-weight: bold;
+  }
+  
+  /* Birthday Section */
+  .big-text {
+    font-size: 10rem;
+    margin: 0;
+  }
+  .buttonMessage{
+    margin-bottom: 2rem;
+
+  }
+  
+  .profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin: 20px 0;
+  }
+  
+  button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  button:hover {
+    background: #e63950;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Fullscreen Cake Video */
+  #cakeVideoOverlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 9999;
+  }
+  
+  #cakeVideoOverlay video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    #countdown { font-size: 3rem; }
+    .big-text { font-size: 2rem; }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  /* 🌟 Final scene */
+/* 🌟 Final scene */
+#finalScene {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    overflow: hidden;
+  }
+  
+  /* Background image (BOTTOM layer) */
+  .final-image {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  /* Overlay video (TOP layer) */
+  #overlayVideo {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  
+    z-index: 2;              /* 🔥 THIS FIXES IT */
+    mix-blend-mode: screen;
+    opacity: 0.85;
+  
+    pointer-events: none;
+  }
+ /* ===============================
+   ❤️ 25 REASONS – HEART CARDS
+   =============================== */
+
+/* Section */
+#reasonsSection {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    padding: 80px 20px;
+  background: url("./video/heart.jpg") center / cover no-repeat;
+  }
+  
+  /* Section title */
+  .section-title {
+    font-size: 5rem;
+    color: #910c05;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;  }
+  
+  /* Grid */
+  .heart-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* Card */
+  .heart-card {
+    height: 220px;                 /* BIG cards */
+    background: #ffffff;
+    border: 2px solid #910c05;     /* Elegant red border */
+    border-radius: 20px;
+    cursor: pointer;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .heart-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 77, 109, 0.25);
+  }
+  
+  /* Heart icon */
+  .heart {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Card text */
+  .heart-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    padding: 0 15px;
+    margin: 0;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
+    .section-title {
+      font-size: 2.2rem;
+    }
+  
+    .heart-card {
+      height: 220px;
+    }
+  
+    .heart {
+      font-size: 3.5rem;
+    }
+  }
+  
+  /* ===============================
+   🪟 MODAL OVERLAY (FIXED)
+   =============================== */
+
+.modal {
+    position: fixed;            /* 🔥 REQUIRED */
+    inset: 0;                    /* top:0 right:0 bottom:0 left:0 */
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;             /* 🔥 ABOVE EVERYTHING */
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  #modalTitle{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: #910c05;
+  }
+  .modal-content {
+    background: url("./video/pages.png") center / cover no-repeat;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    position: relative;
+    animation: modalPop 0.3s ease;
+  }
+  
+  @keyframes modalPop {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* 💖 LOVE BUTTON */
+  .loveSection{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+.love-btn {
+  font-size: 2rem;
+  padding: 20px 40px;
+  border-radius: 50px;
+  background: transparent;
+  color: #910c05;
+  border: 2px solid #910c05;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.love-btn:hover {
+  transform: scale(1.1);
+  background: transparent;
+}
+
+/* 💖 LOVE OVERLAY */
+#loveOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+#loveOverlay video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* 💖 LOVE MESSAGE */
+.love-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.love-message h1 {
+  margin: 1rem;
+
+  font-size: 5rem;
+  color: white;
+  animation: fadeInLove 2s ease forwards;
+}
+.love-message h4 {
+  margin: 1rem;
+  font-size: 4rem;
+  color: white;
+  animation: fadeInLove 2s ease forwards;
+}
+.love-message h6 {
+  margin: 1rem;
+  font-size: 3rem;
+  color: white;
+  animation: fadeInLove 2s ease forwards;
+}
+
+@keyframes fadeInLove {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
