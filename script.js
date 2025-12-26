@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const SKIP_COUNTDOWN = urlParams.get("skip") === "true";
 
 // 🎂 Real birthday date
-const birthday = new Date(Date.now() + 60000);
+const birthday = new Date(2026, 0, 2, 0, 0, 0);
 
 // If skip=true → force birthday instantly
 if (SKIP_COUNTDOWN) {
